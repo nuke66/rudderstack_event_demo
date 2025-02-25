@@ -18,21 +18,16 @@ const page = () => {
       },
     );
   };
-  const identify = () => {
+  const identify = (traits) => {
     console.log('identify function called');
-    window.rudderanalytics?.identify(
-      'sample-user-123',
-      {
-        firstName: 'Alex',
-        lastName: 'Keener',
-        email: 'alex@example.com',
-        phone: '+1-202-555-0146',
-      },
-      () => {
-        toast.info('identify event');
-      },
-    );
-  };
+    if (window.rudderanalytics) {
+      window.rudderanalytics.identify(
+      traits.email, // using email as the userId
+      traits,
+      () => {toast.info('identify event');},
+      );
+    }
+  };	
   const track = () => {
     console.log('track function called');
     window.rudderanalytics?.track(
@@ -90,7 +85,7 @@ const page = () => {
         'previous_question': 'Tool start',
         'next_question': 'Were you assessed before 14th September 2024?',
         'attempt': 1,
-        'updated': 'True'
+        'updated': 'False'
       },
       () => {
         toast.success('wayfinder_next event');
