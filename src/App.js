@@ -62,7 +62,7 @@ function App() {
                   <h2>Standard Events</h2>
                   <div className='card'>
                     <button onClick={rudderstackEvents.page}>page</button>
-                    <button onClick={rudderstackEvents.identify}>identify</button>
+                    <button onClick={() => rudderstackEvents.identify({ userId: 'dummyUser', traits: { email: 'dummy@example.com', name: 'Dummy User' } })}>identify</button>
                     <button onClick={rudderstackEvents.track}>track</button>
                     <button onClick={rudderstackEvents.group}>group</button>
                     <button onClick={rudderstackEvents.alias}>alias</button>
