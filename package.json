@@ -1,5 +1,6 @@
 {
   "name": "sample-app",
+  "homepage": "https://rudder.nuke66.xyz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
