@@ -4,14 +4,13 @@ import { toast } from 'react-toastify';
 const page = () => {
     console.log('page function called');
     window.rudderanalytics?.page(
-      'Cart',
-      'Cart Viewed',
+      'page_view_rs',
       {
-        path: '/best-seller/1',
-        referrer: 'https://www.google.com/search?q=estore+bestseller',
-        search: 'estore bestseller',
-        title: 'The best sellers offered by EStore',
-        url: 'https://www.estore.com/best-seller/1',
+        path: window.location.pathname,
+        referrer: document.referrer,
+        search: window.location.search,
+        title: document.title,
+        url: window.location.href,
       },
       () => {
         toast.info('Page event');

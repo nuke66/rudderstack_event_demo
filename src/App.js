@@ -25,7 +25,7 @@ function App() {
     const analytics = new RudderAnalytics();
 
     analytics.load(
-      process.env.REACT_APP_RUDDERSTACK_WRITE_KEY,
+      process.env.REACT_APP_RUDDERSTACK_WRITE_KEY_HYBRID,
       process.env.REACT_APP_RUDDERSTACK_DATAPLANE_URL
     );
 
@@ -39,11 +39,13 @@ function App() {
     };
   }, []); // Ensure this effect only runs once on mount
 
+  
   useEffect(() => {
     if (location.pathname === '/') {
       rudderstackEvents.page(); // Fire the page event when navigating back to the home route
     }
   }, [location.pathname]); // Runs when the location pathname changes
+  
 
 
   return (
@@ -51,7 +53,7 @@ function App() {
       <ToastContainer />
 
         <div className='App'>
-          <header className='App-header'>
+          <header className='App-header' style={{ backgroundColor: '#f5e7c9', minHeight: '130vh' }}>
             <h1>RudderStack Events Demo</h1>
             <nav>
               <Link to="/">Home</Link> | <Link to="/second-page">Second Page</Link>
