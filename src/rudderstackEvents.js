@@ -253,5 +253,81 @@ const page = () => {
     );
   };
 
+  /* * * EOL EVENTS * * */
+  const my_costs_update = () => {
+    window.rudderanalytics?.track(
+      "my_costs_update", 
+      {
+        "response": {
+          "Assessment status": "Approved for services: On or after 1 July 2025",
+          "Pension status" : "Part pensioner",
+          "Income": 19000,
+          "Assets": 65000,
+          "Partner status": "Single",
+          "Classification": "Classification 6 - $12,000 per quarter"
+        },
+        "fields_updated": [
+              {"Income": 17000},
+              {"Partner Status": "Married"}
+        ],
+        "attempt": 2
+      },
+      () => {
+        toast.success('my_costs_update event'); 
+      }
+    );
+  };
 
-export { page, identify, track, alias, group, wayfinder_start, wayfinder_next, wayfinder_back, wayfinder_complete, abandon_tool, mar_start, mar_next, mar_back, mar_menu_stepper, mar_complete, eol_start, eol_next, eol_complete };    
+  const my_costs_update_missing_fields = () => {
+    window.rudderanalytics?.track(
+      "my_costs_update", 
+      {
+        "response": {
+          "Assessment status": "Approved for services: On or after 1 July 2025",
+          "Pension status" : "Part pensioner",
+          "Income": 19000,
+          "new field": 65000,
+          "Partner status": "Single",
+          "Classification": "Classification 6 - $12,000 per quarter"
+        },
+        "fields_updated": [
+            {"Income": 17000},
+            {"Partner Status": "Married"}
+          ],
+        "attempt": 2
+      },
+      () => {
+        toast.success('my_costs_update event'); 
+      }
+    );
+  };
+
+
+  const bq_event_test = () => {
+    window.rudderanalytics?.track(
+      "bq_event_test", 
+      {
+        "description": "Test to break out a field list into its own BQ table",
+        "response": {
+          "field one": "field one value",
+          "field one a"  : "field one a value",
+          "field_two": "field two value",
+          "field 3": "field 3 value",
+          "field *": "field * value",
+          "field /*^-+": "field /*^-+ value",
+          "field five": 1234567890
+        },
+        "fields_updated": [
+            {"field one": "OLD field one value"},
+            {"field_3": "OLD field 3 value"},
+            {"field five": 999999}
+          ],
+        "attempt": 2
+      },
+      () => {
+        toast.success('bq_event_test'); 
+      }
+    );
+  };
+
+export { page, identify, track, alias, group, wayfinder_start, wayfinder_next, wayfinder_back, wayfinder_complete, abandon_tool, mar_start, mar_next, mar_back, mar_menu_stepper, mar_complete, eol_start, eol_next, eol_complete, my_costs_update, my_costs_update_missing_fields, bq_event_test};    

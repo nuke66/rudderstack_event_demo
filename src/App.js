@@ -90,6 +90,15 @@ function App() {
                     <button onClick={rudderstackEvents.eol_next}>next</button>
                     <button onClick={rudderstackEvents.eol_complete}>complete</button>
                   </div>
+                  <h2>Response param example</h2>
+                  <div className='card'>
+                    <button onClick={rudderstackEvents.my_costs_update}>my_costs_update</button>
+                    <button onClick={rudderstackEvents.my_costs_update_missing_fields}>my_costs_update (missing field, new field)</button>
+                    <button onClick={rudderstackEvents.bq_event_test}>BQ event test</button>
+                  </div>
+                  <div style={{ marginTop: '550px' }}>
+                    <p>Hello!</p>
+                  </div>
                 </>
               } />
               <Route path="/second-page" element={<SecondPage />} />

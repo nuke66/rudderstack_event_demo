@@ -26,7 +26,7 @@ Now replace the placeholder values with the actual write key and dataplane url v
 
 Run this command to start the app.
 
-### `npm start`
+### `npm run start`
 
 ## Stop the app
 
