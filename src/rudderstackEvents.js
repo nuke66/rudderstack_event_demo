@@ -253,7 +253,65 @@ const page = () => {
     );
   };
 
-  /* * * EOL EVENTS * * */
+  /* * * News and Updates * * */
+  const news_article_click = () => {
+    window.rudderanalytics?.track(
+      "news_article_click", 
+      {
+        news_block: "Latest news",
+        position: 1,
+        article_date: "12 September 2024",
+        option_selected: "New Aged Care Bill passes Parliament"
+      },
+      () => {
+        toast.success('news_article_click event'); 
+      }
+    )
+  };
+
+  const news_interaction_pagination = () => {
+    window.rudderanalytics?.track(
+      "news_interaction", 
+      {
+          news_block: "All News",
+          interaction_type: "Pagination",
+          option_selected: "Jump to page: 1 | 3"
+      },
+      () => {
+        toast.success('news_interaction event'); 
+      }
+    )
+  };
+
+  const news_interaction_refine_open = () => {
+    window.rudderanalytics?.track(
+      "news_interaction", 
+      {
+          news_block: "All News",
+          interaction_type: "Refine",
+          option_selected: "Open Filters"
+      },
+      () => {
+        toast.success('news_interaction event'); 
+      }
+    )
+  };
+
+  const news_interaction_refine_add = () => {
+    window.rudderanalytics?.track(
+      "news_interaction", 
+      {
+          news_block: "All News",
+          interaction_type: "Refine",
+          option_selected: "General announcements - Add"
+      },
+      () => {
+        toast.success('news_interaction event'); 
+      }
+    )
+  };
+
+  /* * * Test param values that are json objects or lists * * */
   const my_costs_update = () => {
     window.rudderanalytics?.track(
       "my_costs_update", 
@@ -330,4 +388,4 @@ const page = () => {
     );
   };
 
-export { page, identify, track, alias, group, wayfinder_start, wayfinder_next, wayfinder_back, wayfinder_complete, abandon_tool, mar_start, mar_next, mar_back, mar_menu_stepper, mar_complete, eol_start, eol_next, eol_complete, my_costs_update, my_costs_update_missing_fields, bq_event_test};    
+export { page, identify, track, alias, group, wayfinder_start, wayfinder_next, wayfinder_back, wayfinder_complete, abandon_tool, mar_start, mar_next, mar_back, mar_menu_stepper, mar_complete, eol_start, eol_next, eol_complete, news_article_click, news_interaction_pagination, news_interaction_refine_open, news_interaction_refine_add, my_costs_update, my_costs_update_missing_fields, bq_event_test};    

@@ -8,9 +8,16 @@ body {
 
 
 
-h1,h2 {
+h1 {
   margin-bottom: 10px;
+  font-size: 38px;
 }
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -20,7 +27,7 @@ button {
   border-radius: 7px;
   border: 1px solid white;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 18px;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -35,4 +42,13 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  display: flex;
+  flex-shrink: 1;
+  flex-flow: wrap;
+  align-items: start;
+  row-gap: 20px;
+  justify-content: center;
 }

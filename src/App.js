@@ -90,10 +90,17 @@ function App() {
                     <button onClick={rudderstackEvents.eol_next}>next</button>
                     <button onClick={rudderstackEvents.eol_complete}>complete</button>
                   </div>
+                  <h2>News and Updates</h2>
+                  <div className='card'>
+                    <button onClick={rudderstackEvents.news_article_click}>news_article_click</button>
+                    <button onClick={rudderstackEvents.news_interaction_pagination}>news_interaction<br/>(pagination)</button>
+                    <button onClick={rudderstackEvents.news_interaction_refine_open}>news_interaction<br/>(open filter)</button>
+                    <button onClick={rudderstackEvents.news_interaction_refine_add}>news_interaction<br/>(add filter)</button>
+                  </div>
                   <h2>Response param example</h2>
                   <div className='card'>
                     <button onClick={rudderstackEvents.my_costs_update}>my_costs_update</button>
-                    <button onClick={rudderstackEvents.my_costs_update_missing_fields}>my_costs_update (missing field, new field)</button>
+                    <button onClick={rudderstackEvents.my_costs_update_missing_fields}>my_costs_update<br/>(missing field, new field)</button>
                     <button onClick={rudderstackEvents.bq_event_test}>BQ event test</button>
                   </div>
                   <div style={{ marginTop: '550px' }}>
