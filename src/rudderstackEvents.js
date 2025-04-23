@@ -340,26 +340,27 @@ const page = () => {
     window.rudderanalytics?.track(
       "my_costs_update", 
       {
+        "anewfield": "fedcba",
         "response": {
           "Assessment status": "Approved for services: On or after 1 July 2025",
           "Pension status" : "Part pensioner",
           "Income": 19000,
-          "new field": 65000,
+          "another field": 65000,
           "Partner status": "Single",
           "Classification": "Classification 6 - $12,000 per quarter"
         },
         "fields_updated": [
-            {"Income": 17000},
-            {"Partner Status": "Married"}
+            {"Pension status": "Full pensioner"},
+            {"Partner Status": "Single"},
+            {"Classification": "Classification 1 - $1,000 per quarter"}
           ],
-        "attempt": 2
+        "attempt": 3
       },
       () => {
         toast.success('my_costs_update event'); 
       }
     );
   };
-
 
   const bq_event_test = () => {
     window.rudderanalytics?.track(
@@ -371,9 +372,8 @@ const page = () => {
           "field one a"  : "field one a value",
           "field_two": "field two value",
           "field 3": "field 3 value",
-          "field *": "field * value",
-          "field /*^-+": "field /*^-+ value",
-          "field five": 1234567890
+          "do you have a partner?": "Yes",
+          "do you work M-F : 9-5?": "Yes"
         },
         "fields_updated": [
             {"field one": "OLD field one value"},
