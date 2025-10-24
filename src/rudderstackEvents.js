@@ -380,7 +380,8 @@ const page = () => {
             {"field_3": "OLD field 3 value"},
             {"field five": 999999}
           ],
-        "attempt": 2
+        "attempt": 2,
+        "options": ["option 1", "option 2", "option 3"]
       },
       () => {
         toast.success('bq_event_test'); 

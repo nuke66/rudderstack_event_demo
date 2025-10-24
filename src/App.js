@@ -23,11 +23,20 @@ function App() {
     }
 
     const analytics = new RudderAnalytics();
-
+/*
     analytics.load(
       process.env.REACT_APP_RUDDERSTACK_WRITE_KEY,
       process.env.REACT_APP_RUDDERSTACK_DATAPLANE_URL
     );
+
+    */
+
+    analytics.load(
+      process.env.REACT_APP_RUDDERSTACK_WRITE_KEY,
+      process.env.REACT_APP_RUDDERSTACK_DATAPLANE_URL,
+      {uaChTrackLevel: "full"}
+    );
+
 
     analytics.ready(() => {
       console.log('Analytics ready'); // Debugging line
